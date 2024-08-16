@@ -14,7 +14,7 @@ class NotesView extends StatelessWidget {
             context: context,
             builder: (context) {
               return const AddShowModelBottomSheet(
-    
+                
               );
             },
           );
@@ -29,4 +29,3 @@ class NotesView extends StatelessWidget {
     );
   }
 }
-
