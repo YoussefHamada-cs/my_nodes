@@ -11,7 +11,7 @@ class NoteItem extends StatelessWidget {
       child: Container(
         height: 150,
         decoration: BoxDecoration(
-            color: Colors.blueGrey, borderRadius: BorderRadius.circular(16)),
+            color: Colors.amber[400], borderRadius: BorderRadius.circular(16)),
         child: Stack(
           children: [
             ListTile(
@@ -24,7 +24,7 @@ class NoteItem extends StatelessWidget {
                 child: Text(
                   'build your notes with youssef hamada',
                   style: TextStyle(
-                      color: Colors.black.withOpacity(0.4), fontSize: 20),
+                      color: Colors.black.withOpacity(0.4), fontSize: 18),
                 ),
               ),
               trailing: IconButton(
