@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_notes/views/widget/body_edit_note_view.dart';
 
 class EditNotesView extends StatelessWidget {
@@ -9,10 +8,10 @@ class EditNotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Notes'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.a))],
+        title: const Text('Edit Notes'),
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.check))],
       ),
-      body: BodyEditNoteView(),
+      body: const BodyEditNoteView(),
     );
   }
 }
