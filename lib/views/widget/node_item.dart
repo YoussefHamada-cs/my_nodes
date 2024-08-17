@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_notes/views/edit_notes_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
@@ -41,6 +42,18 @@ class NoteItem extends StatelessWidget {
                 child: Text(
                   'hello in my app',
                   style: TextStyle(color: Colors.black.withOpacity(.4)),
+                )),
+            Positioned(
+                bottom: 0,
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return EditNotesView();
+                      },
+                    ));
+                  },
+                  child: Text('Edit'),
                 ))
           ],
         ),

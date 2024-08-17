@@ -8,7 +8,7 @@ class NotesViewbady extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Notes_item_listview();
+    return const NotesItemListview();
   }
 }
 

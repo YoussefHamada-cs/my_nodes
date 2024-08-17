@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AddShowModelBottomSheet extends StatelessWidget {
-  const AddShowModelBottomSheet({
-    super.key,
-  });
+class BodyEditNoteView extends StatelessWidget {
+  const BodyEditNoteView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return  Padding(
       padding: const EdgeInsets.all(12.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
