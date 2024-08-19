@@ -46,7 +46,7 @@ class NoteItem extends StatelessWidget {
             Positioned(
                 bottom: 0,
                 child: MaterialButton(
-                  color: Colors.amber,
+                  
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
