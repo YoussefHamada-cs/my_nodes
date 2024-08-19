@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+
 class AddForm extends StatefulWidget {
   const AddForm({
     super.key,
   });
+  
 
   @override
   State<AddForm> createState() => _AddFormState();
@@ -13,6 +15,7 @@ class _AddFormState extends State<AddForm> {
   final GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subtitle;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +71,9 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
-          GestureDetector(
-            onTap: () {
+          MaterialButton(
+            color: Colors.blue,
+            onPressed: () {
               if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
               } else {
@@ -77,18 +81,7 @@ class _AddFormState extends State<AddForm> {
                 setState(() {});
               }
             },
-            child: MaterialButton(
-              color: Colors.blue,
-              onPressed: () {
-                if (formkey.currentState!.validate()) {
-                  formkey.currentState!.save();
-                } else {
-                  autovalidateMode = AutovalidateMode.always;
-                  setState(() {});
-                }
-              },
-              child: const Text('Add'),
-            ),
+            child: const Text('Add'),
           )
         ],
       ),
