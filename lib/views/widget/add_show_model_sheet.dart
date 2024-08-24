@@ -21,10 +21,10 @@ class _AddShowModelBottomSheetState extends State<AddShowModelBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12.0),
         child: BlocConsumer<AddNotesCubit, AddNotesState>(
           builder: (context, state) {
-            return ModalProgressHUD(inAsyncCall: isloading, child: AddForm());
+            return ModalProgressHUD(inAsyncCall: isloading, child: const AddForm());
           },
           listener: (context, state) {
             if (state is AddNotesFailure) {

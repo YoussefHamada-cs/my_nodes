@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-
 class AddForm extends StatefulWidget {
   const AddForm({
     super.key,
   });
-  
 
   @override
   State<AddForm> createState() => _AddFormState();
@@ -15,7 +13,6 @@ class _AddFormState extends State<AddForm> {
   final GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subtitle;
-  
 
   @override
   Widget build(BuildContext context) {
