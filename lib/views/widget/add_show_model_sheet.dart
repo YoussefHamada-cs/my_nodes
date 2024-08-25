@@ -24,7 +24,7 @@ class _AddShowModelBottomSheetState extends State<AddShowModelBottomSheet> {
         padding: const EdgeInsets.all(12.0),
         child: BlocConsumer<AddNotesCubit, AddNotesState>(
           builder: (context, state) {
-            return ModalProgressHUD(inAsyncCall: isloading, child: const AddForm());
+            return ModalProgressHUD(inAsyncCall: isloading, child:const SingleChildScrollView(child:  AddForm()));
           },
           listener: (context, state) {
             if (state is AddNotesFailure) {

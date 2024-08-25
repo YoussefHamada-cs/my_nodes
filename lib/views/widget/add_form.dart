@@ -16,7 +16,7 @@ class _AddFormState extends State<AddForm> {
   final GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subtitle;
-
+ 
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -71,26 +71,24 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
-          BlocProvider(
-            create: (context) => AddNotesCubit(),
-            child: MaterialButton(
-              color: Colors.blue,
-              onPressed: () {
-                if (formkey.currentState!.validate()) {
-                  formkey.currentState!.save();
-                  var noteModel = NoteModel(
-                      title: title!,
-                      subtitle: subtitle!,
-                      date: DateTime.now().toString(),
-                      color: Colors.black54.value);
-                  BlocProvider.of<AddNotesCubit>(context).addNote(noteModel);
-                } else {
-                  autovalidateMode = AutovalidateMode.always;
-                  setState(() {});
-                }
-              },
-              child: const Text('Add'),
-            ),
+          MaterialButton(
+            
+            color: Colors.blue,
+            onPressed: () {
+              if (formkey.currentState!.validate()) {
+                formkey.currentState!.save();
+                var noteModel = NoteModel(
+                    title: title!,
+                    subtitle: subtitle!,
+                    date: DateTime.now().toString(),
+                    color: Colors.black54.value);
+                BlocProvider.of<AddNotesCubit>(context).addNote(noteModel);
+              } else {
+                autovalidateMode = AutovalidateMode.always;
+                setState(() {});
+              }
+            },
+            child: const Text('Add'),
           )
         ],
       ),
