@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_notes/cubits/add_note_cubit/notes_cubit.dart';
+import 'package:my_notes/models/note_model.dart';
 
 class AddForm extends StatefulWidget {
   const AddForm({
@@ -68,17 +71,26 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
-          MaterialButton(
-            color: Colors.blue,
-            onPressed: () {
-              if (formkey.currentState!.validate()) {
-                formkey.currentState!.save();
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
-            },
-            child: const Text('Add'),
+          BlocProvider(
+            create: (context) => AddNotesCubit(),
+            child: MaterialButton(
+              color: Colors.blue,
+              onPressed: () {
+                if (formkey.currentState!.validate()) {
+                  formkey.currentState!.save();
+                  var noteModel = NoteModel(
+                      title: title!,
+                      subtitle: subtitle!,
+                      date: DateTime.now().toString(),
+                      color: Colors.black54.value);
+                  BlocProvider.of<AddNotesCubit>(context).addNote(noteModel);
+                } else {
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
+                }
+              },
+              child: const Text('Add'),
+            ),
           )
         ],
       ),
