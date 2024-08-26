@@ -16,7 +16,7 @@ class _AddFormState extends State<AddForm> {
   final GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subtitle;
- 
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -47,6 +47,9 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
+          SizedBox(
+            height: 20,
+          ),
           TextFormField(
             onSaved: (newValue) {
               subtitle = newValue;
@@ -71,8 +74,10 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
+          SizedBox(
+            height: 50,
+          ),
           MaterialButton(
-            
             color: Colors.blue,
             onPressed: () {
               if (formkey.currentState!.validate()) {
