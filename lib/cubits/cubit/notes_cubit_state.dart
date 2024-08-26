@@ -3,18 +3,18 @@ part of 'notes_cubit_cubit.dart';
 @immutable
 sealed class NotesCubitState {}
 
-final class NotesCubitInitial extends NotesCubitState {}
+final class NotesInitial extends NotesCubitState {}
 
-final class NotesCubitLoading extends NotesCubitState {}
+final class NotesLoading extends NotesCubitState {}
 
-final class NotesCubitSuccess extends NotesCubitState {
+final class NotesSuccess extends NotesCubitState {
   final List<NoteModel> notes;
 
-  NotesCubitSuccess({required this.notes});
+  NotesSuccess( this.notes);
 }
 
-final class NotesCubitFailure extends NotesCubitState {
-  late final String errormassage;
-  NotesCubitFailure(this.errormassage);
+final class NotesFailure extends NotesCubitState {
+   final String errormassage;
+  NotesFailure(this.errormassage);
 // ignore: empty_constructor_bodies
 }
