@@ -18,7 +18,7 @@ class NotesItemListview extends StatelessWidget {
           child: ListView.builder(
               itemCount: notes.length,
               itemBuilder: (context, index) {
-                return const NoteItem();
+                return  NoteItem(note: notes[index],);
               }),
         );
       },

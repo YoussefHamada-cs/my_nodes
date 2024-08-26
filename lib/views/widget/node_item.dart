@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_notes/models/note_model.dart';
 import 'package:my_notes/views/edit_notes_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
-
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,18 +13,18 @@ class NoteItem extends StatelessWidget {
       child: Container(
         height: 150,
         decoration: BoxDecoration(
-            color: Colors.amber[400], borderRadius: BorderRadius.circular(16)),
+            color: Color(note.color), borderRadius: BorderRadius.circular(16)),
         child: Stack(
           children: [
             ListTile(
-              title: const Text(
-                'flutter tips',
+              title: Text(
+                note.title,
                 style: TextStyle(color: Colors.black, fontSize: 26),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 10, bottom: 10),
                 child: Text(
-                  'build your notes with youssef hamada',
+                  note.subtitle,
                   style: TextStyle(
                       color: Colors.black.withOpacity(0.4), fontSize: 18),
                 ),
@@ -40,13 +41,12 @@ class NoteItem extends StatelessWidget {
                 bottom: 12,
                 right: 24,
                 child: Text(
-                  'hello in my app',
+                  note.date,
                   style: TextStyle(color: Colors.black.withOpacity(.4)),
                 )),
             Positioned(
                 bottom: 0,
                 child: MaterialButton(
-                  
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
