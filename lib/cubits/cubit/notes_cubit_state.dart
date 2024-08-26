@@ -3,7 +3,9 @@ part of 'notes_cubit_cubit.dart';
 @immutable
 sealed class NotesCubitState {}
 
-final class NotesInitial extends NotesCubitState {}
+ class NotesInitial extends NotesCubitState {}
+ class NotesSuccess extends NotesCubitState {}
+
 
 
 
