@@ -30,17 +30,14 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => NotesCubitCubit(),
-          child: Container(),
+          
         )
       ],
-      child: BlocProvider(
-        create: (context) => NotesCubitCubit(),
-        child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme:
-                ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
-            home: const NotesView()),
-      ),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme:
+              ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
+          home: const NotesView()),
     );
   }
 }
