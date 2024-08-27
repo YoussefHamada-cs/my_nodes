@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:my_notes/cubits/add_note_cubit/notes_cubit.dart';
 import 'package:my_notes/models/note_model.dart';
+import 'package:my_notes/views/widget/colors_list_view.dart';
 
 class AddForm extends StatefulWidget {
   const AddForm({
@@ -48,7 +49,7 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           TextFormField(
@@ -75,8 +76,12 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
-          SizedBox(
-            height: 50,
+       const   SizedBox(
+            height: 40,
+          ),
+          const ColorListView(),
+          const SizedBox(
+            height: 20,
           ),
           MaterialButton(
             color: Colors.blue,
@@ -104,3 +109,6 @@ class _AddFormState extends State<AddForm> {
     );
   }
 }
+
+
+
