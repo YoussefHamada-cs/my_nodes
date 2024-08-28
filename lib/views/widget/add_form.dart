@@ -76,7 +76,7 @@ class _AddFormState extends State<AddForm> {
               return null;
             },
           ),
-       const   SizedBox(
+          const SizedBox(
             height: 40,
           ),
           const ColorListView(),
@@ -109,6 +109,3 @@ class _AddFormState extends State<AddForm> {
     );
   }
 }
-
-
-
